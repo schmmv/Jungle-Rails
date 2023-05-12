@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     
     if @user.save
       # If user saves in the db successfully:
-      session[:user_id] = @user.id
       flash[:notice] = "Account created successfully!"
       redirect_to root_path
     else
