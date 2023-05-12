@@ -24,6 +24,15 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  # log in page with form:
+	get '/login'     => 'sessions#new'
+	
+	# create (post) action for when log in form is submitted:
+	post '/login'    => 'sessions#create'
+	
+	# delete action to log out:
+	delete '/logout' => 'sessions#destroy'  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
