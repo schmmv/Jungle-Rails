@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :show]
   end
 
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new', as: :new_user
   post '/users' => 'users#create'
 
   # log in page with form:
