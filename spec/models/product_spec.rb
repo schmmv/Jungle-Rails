@@ -10,7 +10,7 @@ RSpec.describe Product, type: :model do
         quantity: 3,
         category: @category
       )
-      expect(@product).to be_present
+      expect(@product).to be_valid
     end
     it 'has a name' do
       @category = Category.create(name: 'test_category')
@@ -31,7 +31,7 @@ RSpec.describe Product, type: :model do
         quantity: 3,
         category: @category
       )
-       puts @product.inspect
+      #  puts @product.inspect
       expect(@product.errors.full_messages).to include("Price is not a number")
     end
     it 'has a quantity' do
@@ -42,7 +42,7 @@ RSpec.describe Product, type: :model do
         quantity: nil,
         category: @category
       )
-       puts @product.inspect
+      #  puts @product.inspect
       expect(@product.errors.full_messages).to include("Quantity can't be blank")
     end
     it 'has a category' do
@@ -53,7 +53,7 @@ RSpec.describe Product, type: :model do
         quantity: 5,
         category: nil
       )
-       puts @product.inspect
+      #  puts @product.inspect
       expect(@product.errors.full_messages).to include("Category must exist")
     end
   end
